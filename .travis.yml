@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t lwmdev/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t lwndev/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true lwndev/react-test npm test
 
 after_success:
  - docker build -t lwndev/multi-client ./client
